@@ -8,3 +8,5 @@ let ga = new GlitchArt('.drow','./images/bg.jpg')
 GlitchArt(document,imageUrl)
 document: 传入存放效果的dom
 imageUrl: 图片地址
+
+测试地址 https://002301.github.io/GlitchArt/src/

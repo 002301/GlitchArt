@@ -1,5 +1,5 @@
 
-export default class GlitchArt {
+ export default class GlitchArt {
     constructor(dom,url,maxoffset=10){
       // console.log(dom,url)
       this._canvas = null;

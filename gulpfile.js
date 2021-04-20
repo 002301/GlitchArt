@@ -1,7 +1,9 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const connect = require('gulp-connect') //服务器
 const concat = require('gulp-concat') //合并文件
-const uglify = require('gulp-uglify'); //压缩js
+// const uglify = require('gulp-uglify'); //压缩js 不支持ES6 写法
+const rename = require("gulp-rename");
+const uglify = require('gulp-uglify-es').default;
 const cleanCSS = require('gulp-clean-css'); //压缩 css
 const htmlmin = require('gulp-htmlmin'); //压缩html
 const image = require('gulp-image');//压缩img
@@ -11,9 +13,16 @@ const shell = require('shelljs'); //命令行操作
 const c = require('child_process');
 //压缩js
 function zipjs(){
-  return src('src/**/*.js')
+  return src('src/js/*.js')
     .pipe(uglify())
     .pipe(dest('dist/js/'))
+}
+//压缩js
+function zjs(){
+  return src('./src/GlitchArt.js')
+  .pipe(uglify())
+  .pipe(rename("GlitchArt.min.js"))
+  .pipe(dest('./'))
 }
 //压缩css
 function zipcss(){
@@ -112,5 +121,6 @@ exports.dev = parallel(watchAll,dev);
 exports.clean = clean; 
 // 浏览器打开打包项目
 exports.distServer = distServer;
+exports.zjs = zjs;
 //打包项目
 exports.default = series(clean, zipjs, zipcss, zipHtml, zipImg, distServer)
