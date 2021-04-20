@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+<meta name="keywords" content=" ">
+<meta name="description" content=" ">
+<meta name="author" content="maning">
+<script>
+	const WIDTH = 750
+	const mobileAdapter = () => {
+		let scale = screen.width / WIDTH
+		let content = `width=${WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}`
+		let meta = document.querySelector('meta[name=viewport]')
+		if (!meta) {
+			meta = document.createElement('meta')
+			meta.setAttribute('name', 'viewport')
+			document.head.appendChild(meta)
+		}
+		meta.setAttribute('content', content)
+	}
+	mobileAdapter()
+	window.onorientationchange = mobileAdapter
+</script>
+<link href="./css/style.css" rel="stylesheet" type="text/css">
+<title>GlitchArt</title>
+</head>
+<div id="main">
+		<header>
+			<h1>GlitchArt</h1> 
+			<h2>故障艺术</h2>
+		</header>
+		<div class="content">
+			<div class="item">
+				<div class="drowCont">
+					<div class="drow"></div>
+				</div>
+				<div class="code">
+					<div class="title"><div class="point"></div><h2>画板功能</h2></div>
+<pre>
+import GlitchArt from './js/GlitchArt.js';
+let ga = new GlitchArt('.drow','./images/bg.jpg')
+</pre>
+					
+				</div>
+			</div>
+
+					
+				</div>
+			</div>
+			
+		</div>
+</div>
+<script type="module">
+	import GlitchArt from './js/GlitchArt.js';
+	let ga = new GlitchArt('.drow','./images/bg.jpg')
+</script>
+</body>
+</html>
