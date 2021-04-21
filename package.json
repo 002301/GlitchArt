@@ -1,16 +1,20 @@
 {
-  "name": "@airmn/GlitchArt",
-  "version": "0.0.1",
+  "name": "@airmn/glitchart",
+  "version": "0.0.2",
   "description": "",
   "main": "GlitchArt.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/002301/GlitchArt.git"
+  },
   "scripts": {
     "dev": "gulp dev",
-    "zjs": "gulp zjs"
+    "zjs": "gulp zipjs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["ES6","Canvas","GlitchArt"],
+  "author": "airmni@163.com",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
